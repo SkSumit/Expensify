@@ -22,13 +22,13 @@ const store = configureStore();
 //   })
 // );
 
-// store.dispatch(
-//   addExpense({
-//     description: "Water Bill",
-//     amount: 350,
-//     date: 27082020,
-//   })
-// );
+store.dispatch(
+  addExpense({
+    description: "Water Bill",
+    amount: 350,
+    date: 1596263400000,
+  })
+);
 // store.dispatch(
 //   addExpense({
 //     description: "Rent Bill",

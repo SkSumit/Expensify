@@ -3,12 +3,12 @@ const getVisibleExpenses = (expenses, filter) => {
   return expenses
     .filter((expense) => {
       const DateMoment = moment(expense.date);
-      const startDateMatch = expense.startDate
-        ? moment("2010-10-20").isSameOrBefore("2010-10-19")
+      const startDateMatch = filter.startDate
+        ? filter.startDate.isSameOrBefore(DateMoment, "day")
         : true;
 
-      const endDateMatch = expense.endDate
-        ? endDate.isSameOrAfter(DateMoment, "day")
+      const endDateMatch = filter.endDate
+        ? filter.endDate.isSameOrAfter(DateMoment, "day")
         : true;
 
       const textMatch = expense.description
