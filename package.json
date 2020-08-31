@@ -1,0 +1,42 @@
+{
+  "name": "reactboilerplate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Sumit Kolpekwar",
+  "license": "MIT",
+  "dependencies": {
+    "babel-cli": "6.24.1",
+    "babel-core": "6.25.0",
+    "babel-loader": "7.1.1",
+    "babel-plugin-transform-class-properties": "6.24.1",
+    "babel-preset-env": "1.5.2",
+    "babel-preset-react": "6.24.1",
+    "css-loader": "^3.6.0",
+    "live-server": "^1.2.0",
+    "moment": "^2.27.0",
+    "node-sass": "^4.14.1",
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-addons-shallow-compare": "^15.6.2",
+    "react-dates": "^21.8.0",
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "sass-loader": "6.0.6",
+    "style-loader": "^1.2.1",
+    "uuid": "^8.2.0",
+    "validator": "8.0.0",
+    "webpack": "3.1.0",
+    "webpack-dev-server": "2.5.1"
+  },
+  "scripts": {
+    "serve": "live-server public/",
+    "build": "webpack ",
+    "dev-server": "webpack-dev-server"
+  },
+  "devDependencies": {
+    "babel-plugin-transform-object-rest-spread": "^6.26.0"
+  }
+}
