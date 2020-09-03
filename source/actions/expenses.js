@@ -67,3 +67,28 @@ export const startEditExpense = ({ id }, updates = {}) => {
       });
   };
 };
+
+export const setExpense = (expense) => {
+  return {
+    type: "SET_EXPENSE",
+    expense,
+  };
+};
+
+export const startSetExpense = () => {
+  return (dispatch) => {
+    return db
+      .ref("expenses")
+      .once("value")
+      .then((snapshot) => {
+        const expense = [];
+        snapshot.forEach((childSnapshot) => {
+          expense.push({
+            id: childSnapshot.key,
+            ...childSnapshot.val(),
+          });
+        });
+        dispatch(setExpense(expense));
+      });
+  };
+};
