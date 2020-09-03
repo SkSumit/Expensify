@@ -1,4 +1,5 @@
 import moment from "moment";
+
 const getVisibleExpenses = (expenses, filter) => {
   return expenses
     .filter((expense) => {
@@ -14,7 +15,7 @@ const getVisibleExpenses = (expenses, filter) => {
       const textMatch = expense.description
         .toLowerCase()
         .includes(filter.text.toLowerCase());
-      console.log(startDateMatch, "\n");
+
       return startDateMatch && endDateMatch && textMatch;
     })
     .sort((a, b) => {
@@ -25,4 +26,5 @@ const getVisibleExpenses = (expenses, filter) => {
       }
     });
 };
+
 export default getVisibleExpenses;

@@ -1,6 +1,6 @@
 import React from "react";
 import ExpenseForm from "./AddExpenseForm";
-import { addExpense } from "../actions/expenses";
+import { startAddExpense } from "../actions/expenses";
 import { connect } from "react-redux";
 
 const ExpenseAddPage = (props) => {
@@ -9,7 +9,7 @@ const ExpenseAddPage = (props) => {
       <ExpenseForm
         onSubmitHandler={(expenses) => {
           console.log(expenses);
-          props.dispatch(addExpense(expenses));
+          props.dispatch(startAddExpense(expenses));
         }}
       />
     </div>

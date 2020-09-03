@@ -1,4 +1,17 @@
+// import db from "../firebase/firebase";
 const expensesReducerDefaultState = [];
+
+// db.ref("expenses").on("value", (snapshot) => {
+//   // var expenses = [];
+//   snapshot.forEach((childSnapshot) => {
+//     expensesReducerDefaultState.push({
+//       id: childSnapshot.key,
+//       ...childSnapshot.val(),
+//     });
+//   });
+
+//   console.log(expensesReducerDefaultState);
+// });
 
 export default (state = expensesReducerDefaultState, action) => {
   switch (action.type) {

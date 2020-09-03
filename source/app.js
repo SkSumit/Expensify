@@ -10,18 +10,33 @@ import configureStore from "./store/configureStore";
 import { Provider } from "react-redux";
 
 import { addExpense } from "./actions/expenses";
-import { setTextFilter } from "./actions/filters";
-import getVisibleExpenses from "./selectors/expenses";
+
+import moment from "moment";
+import "./firebase/firebase";
 
 const store = configureStore();
 
-store.dispatch(
-  addExpense({
-    description: "Water Bill",
-    amount: 350,
-    date: 1596263400000,
-  })
-);
+// store.dispatch(
+//   addExpense({
+//     description: "Water Bill",
+//     amount: 30,
+//     date: moment(),
+//   })
+// );
+// store.dispatch(
+//   addExpense({
+//     description: "Water2 Bill",
+//     amount: 120000,
+//     date: moment(),
+//   })
+// );
+// store.dispatch(
+//   addExpense({
+//     description: "Water3 Bill",
+//     amount: 50,
+//     date: moment(),
+//   })
+// );
 
 console.log("Running from script");
 
