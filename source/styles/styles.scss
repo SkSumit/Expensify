@@ -1,2 +1,11 @@
-@import './base/settings.scss';
-@import './base/base';
+// @import './base/settings.scss';
+// @import './base/base';
+
+@import "../../node_modules/bulma/sass/utilities/initial-variables";
+$darkless: #252429;
+$danger: #ec3750;
+
+$primary: $darkless;
+$path: "/img/credit_card_monochromatic.svg";
+
+@import "../../node_modules/bulma/bulma";

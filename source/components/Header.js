@@ -5,17 +5,55 @@ import { startLogOut } from "../actions/auth";
 const Header = (props) => {
   return (
     <div>
-      <h3>
-        Expensifyy
-        <br />
-        <NavLink activeClassName="is-active" to="/dashboard">
-          Dashboard
-        </NavLink>
-        <NavLink activeClassName="is-active" to="/add">
-          Add Expenses
-        </NavLink>
-        <button onClick={props.startLogOut}> LogOut</button>
-      </h3>
+      <nav
+        className="navbar is-spaced is-primary"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div className="navbar-brand">
+          <div className="navbar-item">
+            <h3 className="title is-3 has-text-white">Savver</h3>
+          </div>
+
+          <a
+            role="button"
+            className="navbar-burger burger"
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+          >
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div id="navbarBasicExample" className="navbar-menu">
+          <div className="navbar-start">
+            <div className="navbar-item">
+              <NavLink activeClassName="is-active" to="/dashboard">
+                Dashboard
+              </NavLink>
+            </div>
+
+            <div className="navbar-item">
+              <NavLink activeClassName="is-active" to="/add">
+                Add Expenses
+              </NavLink>
+            </div>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item">
+              <button
+                className="button  is-rounded has-background-danger has-text-white has-text-weight-semibold "
+                onClick={props.startLogOut}
+              >
+                LogOut
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };
