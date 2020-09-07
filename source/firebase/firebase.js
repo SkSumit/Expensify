@@ -1,5 +1,6 @@
 import * as firebase from "firebase";
 import expenses from "../reducers/expenses";
+import { Provider } from "react-redux";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,
@@ -14,55 +15,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
+
 const db = firebase.database();
-
-export { firebase, db as default };
-
-// db.ref("expenses").on("value", (snapshot) => {
-//   console.log(snapshot.val());
-//   var expenses = [];
-//   snapshot.forEach((childSnapshot) => {
-//     expenses.push({
-//       id: childSnapshot.key,
-//       ...childSnapshot.val(),
-//     });
-//   });
-//   console.log(expenses);
-// });
-
-// db.ref("expenses").push({
-//   description: "description",
-//   note: "notes",
-//   amount: 0,
-//   date: "24AUG2020",
-// });
-// db.ref("expenses").push({
-//   description: "description",
-//   note: "notes",
-//   amount: 0,
-//   date: "24AUG2020",
-// });
-
-// db.ref("expenses").push({
-//   description: "description",
-//   note: "notes",
-//   amount: 0,
-//   date: "24AUG2020",
-// });
-
-// db.ref()
-//   .set({
-//     name: "savver",
-//     employees: {
-//       founder: "Sumit Kolpekwar",
-//     },
-//     est: "2020-Aug",
-//     stack: {
-//       fronted: "React",
-//       backend: null,
-//       db: "firebase",
-//     },
-//   })
-//   .then(() => {
-//     console.log("savved!");
-//   });
+const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export { firebase, googleAuthProvider, db as default };

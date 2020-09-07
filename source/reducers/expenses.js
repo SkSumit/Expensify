@@ -1,4 +1,3 @@
-// import db from "../firebase/firebase";
 const expensesReducerDefaultState = [];
 
 export default (state = expensesReducerDefaultState, action) => {
