@@ -15,6 +15,7 @@ class ExpenseForm extends React.Component {
       date: props.editingExpense ? moment(props.editingExpense.date) : moment(),
       focused: false,
       error: undefined,
+      transaction: props.income || "expense",
     };
   }
 
@@ -47,16 +48,20 @@ class ExpenseForm extends React.Component {
       console.log("Submitted");
       this.props.onSubmitHandler({
         description: this.state.description,
-        amount: this.state.amount,
+        amount:
+          this.state.transaction === "income"
+            ? Math.abs(this.state.amount)
+            : -Math.abs(this.state.amount),
         date: this.state.date.valueOf(),
         note: this.state.note,
+        transaction: this.state.transaction,
       });
     }
   };
   render() {
     return (
       <div>
-        <h3>Add Expenses here! </h3>
+        <h3>Add {this.state.transaction} here! </h3>
         {this.state.error ? <p>{this.state.error} </p> : ""}
         <form onSubmit={this.onSubmitHandler}>
           <input

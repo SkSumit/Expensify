@@ -17,6 +17,10 @@ export default (state = filterReducerDefaultState, action) => {
 
     case "SORT_BY_DATE":
       return { ...state, sortBy: action.sortBy };
+    case "SORT_BY_INCOME":
+      return { ...state, sortBy: action.sortBy };
+    case "SORT_BY_EXPENSE":
+      return { ...state, sortBy: action.sortBy };
     case "SET_START_DATE":
       return { ...state, startDate: action.startDate };
     case "SET_END_DATE":

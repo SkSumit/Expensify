@@ -32,3 +32,16 @@ export const setEndDate = (endDate) => {
     endDate,
   };
 };
+
+export const sortByIncome = () => {
+  return {
+    type: "SORT_BY_INCOME",
+    sortBy: "inc",
+  };
+};
+export const sortByExpense = () => {
+  return {
+    type: "SORT_BY_EXPENSE",
+    sortBy: "exp",
+  };
+};

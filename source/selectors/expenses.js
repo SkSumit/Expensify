@@ -16,7 +16,22 @@ const getVisibleExpenses = (expenses, filter) => {
         .toLowerCase()
         .includes(filter.text.toLowerCase());
 
-      return startDateMatch && endDateMatch && textMatch;
+      const incomeMatch =
+        filter.sortBy === "inc"
+          ? filter.sortBy === "inc" && expense.transaction === "income"
+          : true;
+      const expenseMatch =
+        filter.sortBy === "exp"
+          ? filter.sortBy === "exp" && expense.transaction === "expense"
+          : true;
+
+      return (
+        startDateMatch &&
+        endDateMatch &&
+        textMatch &&
+        incomeMatch &&
+        expenseMatch
+      );
     })
     .sort((a, b) => {
       if (filter.sortBy === "date") {

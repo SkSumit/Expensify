@@ -8,6 +8,7 @@ import EditPage from "../components/EditPage";
 
 import Page404 from "../components/Page404";
 import Login from "../components/Login";
+import IncomeAddPage from "../components/IncomeAddPage";
 
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
@@ -19,7 +20,8 @@ const AppRoutes = () => (
     <Switch>
       <PublicRoute path="/" component={Login} exact={true} />
       <PrivateRoute path="/dashboard" component={ExpenseDashboardPage} />
-      <PrivateRoute path="/add" component={ExpenseAddPage} />
+      <PrivateRoute path="/expense" component={ExpenseAddPage} />
+      <PrivateRoute path="/income" component={IncomeAddPage} />
       <PrivateRoute path="/edit/:id" component={EditPage} />
 
       <PublicRoute component={Page404} />

@@ -6,7 +6,13 @@ import { connect } from "react-redux";
 
 import { setTextFilter } from "../actions/filters";
 import { sortByDate } from "../actions/filters";
-import { sortByAmount, setStartDate, setEndDate } from "../actions/filters";
+import {
+  sortByAmount,
+  setStartDate,
+  setEndDate,
+  sortByIncome,
+  sortByExpense,
+} from "../actions/filters";
 
 class ExpensesListInput extends React.Component {
   state = {
@@ -42,6 +48,10 @@ class ExpensesListInput extends React.Component {
               onChange={(e) => {
                 if (e.target.value == "date") {
                   this.props.dispatch(sortByDate());
+                } else if (e.target.value == "inc") {
+                  this.props.dispatch(sortByIncome());
+                } else if (e.target.value == "exp") {
+                  this.props.dispatch(sortByExpense());
                 } else {
                   this.props.dispatch(sortByAmount());
                 }
@@ -49,6 +59,8 @@ class ExpensesListInput extends React.Component {
             >
               <option value="date">Date</option>
               <option value="amt">Amount</option>
+              <option value="inc">Income</option>
+              <option value="exp">Expense</option>
             </select>
           </div>
         </div>

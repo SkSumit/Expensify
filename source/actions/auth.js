@@ -11,6 +11,10 @@ export const logout = () => {
   return { type: "LOGOUT" };
 };
 
+export const giveUserNames = () => {
+  return firebase.auth().currentUser;
+};
+
 const startLogin = () => {
   return () => {
     return firebase.auth().signInWithPopup(googleAuthProvider);
