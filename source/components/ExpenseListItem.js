@@ -5,6 +5,7 @@ import expenseTotal from "../selectors/expenseTotal";
 import moment from "moment";
 import numeral from "numeral";
 import { Link } from "react-router-dom";
+import AddExpenseForm from "./AddExpenseForm";
 
 // load a locale
 numeral.register("locale", "in", {
@@ -33,9 +34,11 @@ numeral.locale("in");
 const ExpenseListItem = (props) => {
   return (
     <div>
-      {`Showing ${props.expenses.length} ${
-        props.expenses.length === 1 ? "item" : "items"
-      }, totalling to ${expenseTotal(props.expenses)} `}
+      <div className="my-3">
+        {`Showing ${props.expenses.length} ${
+          props.expenses.length === 1 ? "item" : "items"
+        }, totalling to ${expenseTotal(props.expenses)} `}
+      </div>
 
       {props.expenses.map((expense) => {
         return (
@@ -45,7 +48,7 @@ const ExpenseListItem = (props) => {
             }  is-small`}
             key={expense.id}
           >
-            <div class="message-body">
+            <div className="message-body">
               <div className="columns ">
                 <div className="column  ">
                   <p className="title is-5">
@@ -77,7 +80,3 @@ export default connect((state) => {
     expenses: getVisibleExpenses(state.expenses, state.filter),
   };
 })(ExpenseListItem);
-
-// <h6 className="is-7">
-// {moment(expense.date).format("Do MMM YYYY")}
-// </h6>

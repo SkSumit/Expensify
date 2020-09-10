@@ -1,6 +1,7 @@
-import * as firebase from "firebase";
-import expenses from "../reducers/expenses";
-import { Provider } from "react-redux";
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
+import "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.FIREBASE_API_KEY,

@@ -12,7 +12,11 @@ export const logout = () => {
 };
 
 export const giveUserNames = () => {
-  return firebase.auth().currentUser;
+  if (firebase.auth().currentUser) {
+    return firebase.auth().currentUser;
+  } else {
+    return "Logged Out";
+  }
 };
 
 const startLogin = () => {

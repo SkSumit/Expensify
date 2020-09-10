@@ -20,7 +20,9 @@ class Header extends Component {
         >
           <div className="navbar-brand">
             <div className="navbar-item">
-              <h3 className="title is-3 has-text-white">Savver</h3>
+              <NavLink activeClassName="is-active" to="/dashboard">
+                <h3 className="title is-3 has-text-white">Savver</h3>
+              </NavLink>
             </div>
 
             <a
@@ -38,25 +40,6 @@ class Header extends Component {
           </div>
 
           <div id="navbarBasicExample" className="navbar-menu">
-            <div className="navbar-start">
-              <div className="navbar-item">
-                <NavLink activeClassName="is-active" to="/dashboard">
-                  Dashboard
-                </NavLink>
-              </div>
-
-              <div className="navbar-item">
-                <NavLink activeClassName="is-active" to="/expense">
-                  Add Expenses
-                </NavLink>
-              </div>
-
-              <div className="navbar-item">
-                <NavLink activeClassName="is-active" to="/income">
-                  Add Income
-                </NavLink>
-              </div>
-            </div>
             <div className="navbar-end">
               <div className="navbar-item">
                 <button

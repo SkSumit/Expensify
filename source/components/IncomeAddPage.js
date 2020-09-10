@@ -6,7 +6,6 @@ import { connect } from "react-redux";
 const ExpenseAddPage = (props) => {
   return (
     <div>
-      <h1>INCOME DALOOOO IDHAR YOU ALOOO</h1>
       <ExpenseForm
         income={"income"}
         onSubmitHandler={(expenses) => {

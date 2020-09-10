@@ -18,8 +18,8 @@ const Login = (props) => {
       <section className="hero is-fullheight-with-navbar">
         <div className="hero-body">
           <div className="container">
-            <div class="columns is-vcentered">
-              <div class="column is-6 loginmain">
+            <div className="columns is-vcentered">
+              <div className="column is-6 loginmain">
                 <h1 className="title is-size-1-desktop ">
                   Start tracking,
                   <span className="has-text-danger">Start Savving </span>
@@ -34,8 +34,8 @@ const Login = (props) => {
                   Login
                 </button>
               </div>
-              <div class="column is-6 has-text-centered ">
-                <figure class="image is-1by1">
+              <div className="column is-6 has-text-centered ">
+                <figure className="image is-1by1">
                   <img src="img/wallet.svg" />
                 </figure>
               </div>

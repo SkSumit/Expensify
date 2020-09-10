@@ -1,10 +1,11 @@
 import React from "react";
 import ExpenseList from "./ExpenseList";
-import ExpenseListInput from "./ExpensesListInput";
+import DashboardHeader from "./DashboardHeader";
 
 const ExpenseDashboardPage = () => {
   return (
     <div>
+      <DashboardHeader />
       <ExpenseList />
     </div>
   );

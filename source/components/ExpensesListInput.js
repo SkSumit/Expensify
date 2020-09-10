@@ -30,14 +30,22 @@ class ExpensesListInput extends React.Component {
     return (
       <div className="columns is-vcentered">
         <div className="column  has-text-right">
-          <input
-            className="input is-rounded"
-            type="search"
-            value={this.props.filters.text}
-            onChange={(e) => {
-              this.props.dispatch(setTextFilter(e.target.value));
-            }}
-          />
+          <div className="field">
+            <p className="control has-icons-left ">
+              <input
+                className="input is-rounded"
+                type="search"
+                value={this.props.filters.text}
+                onChange={(e) => {
+                  this.props.dispatch(setTextFilter(e.target.value));
+                }}
+              />
+
+              <span className="icon is-small is-left">
+                <i className="fas fa-search"></i>
+              </span>
+            </p>
+          </div>
         </div>
         <div
           className="column  is-narrow
@@ -64,7 +72,7 @@ class ExpensesListInput extends React.Component {
             </select>
           </div>
         </div>
-        <div className="column  has-text-right">
+        <div className="column  is-narrow has-text-right">
           <DateRangePicker
             showDefaultInputIcon={true}
             startDate={this.props.filters.startDate}
@@ -75,6 +83,7 @@ class ExpensesListInput extends React.Component {
             endDateId="your_unique_end_date_id"
             focusedInput={this.state.focused}
             onFocusChange={this.onFocusChange}
+            block={true}
             numberOfMonths={1}
             displayFormat="Do MMM, YYYY"
             isOutsideRange={(day) => {

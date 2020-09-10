@@ -8,7 +8,6 @@ const ExpenseAddPage = (props) => {
     <div>
       <ExpenseForm
         onSubmitHandler={(expenses) => {
-          console.log(expenses);
           props.dispatch(startAddExpense(expenses));
         }}
       />

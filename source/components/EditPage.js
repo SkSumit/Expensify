@@ -4,25 +4,31 @@ import ExpenseForm from "./AddExpenseForm";
 import { startEditExpense } from "../actions/expenses";
 import { startRemoveExpense } from "../actions/expenses";
 const EditPage = (props) => {
-  console.log(props.expenses);
   return (
-    <div>
-      <h3> Edit the {props.match.params.id} </h3>
+    <div className="section">
       <ExpenseForm
+        editPage={true}
         editingExpense={props.expenses}
         onSubmitHandler={(expense) => {
           props.dispatch(startEditExpense(props.expenses, expense));
           props.history.push("/");
         }}
       />
-      <button
-        onClick={(e) => {
-          props.dispatch(startRemoveExpense(props.expenses));
-          props.history.push("/");
-        }}
-      >
-        Remove
-      </button>
+      <div className="container">
+        <div className="columns is-centered">
+          <div className="column is-6">
+            <button
+              className="button is-fullwidth is-rounded has-background-danger has-text-white has-text-weight-semibold "
+              onClick={(e) => {
+                props.dispatch(startRemoveExpense(props.expenses));
+                props.history.push("/");
+              }}
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

@@ -7,17 +7,18 @@ import { giveUserNames } from "../actions/auth";
 const ExpenseList = (props) => (
   <section className="section">
     <div className="container">
-      <div className="columns is-vcentered">
-        <div className="column is-narrow ">
-          <h1 className="title">{props.giveUserNames.displayName} 's List</h1>
-        </div>
-        <div className="column">
+      <div className="columns is-centered">
+        <div className="column is-8">
           <ExpenseListInput />
         </div>
       </div>
 
-      <div className="box">
-        <ExpenseListItem />
+      <div className="columns  is-centered">
+        <div className="column is-8">
+          <div className="box ">
+            <ExpenseListItem />
+          </div>
+        </div>
       </div>
     </div>
   </section>

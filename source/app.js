@@ -12,11 +12,10 @@ import { Provider } from "react-redux";
 import { startSetExpense } from "./actions/expenses";
 import { login, logout } from "./actions/auth";
 
+import Loader from "./components/Loader";
 import { firebase } from "./firebase/firebase";
 
 const store = configureStore();
-
-console.log("Running from script");
 
 const jsx = (
   <Provider store={store}>
@@ -25,7 +24,7 @@ const jsx = (
 );
 
 var appRoot = document.getElementById("app");
-ReactDOM.render(<p>LOADING...</p>, appRoot);
+ReactDOM.render(<Loader />, appRoot);
 
 let hasRendered = false;
 
@@ -38,7 +37,6 @@ const renderApp = () => {
 
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log("Logged In");
     store.dispatch(login(user.uid));
     store.dispatch(startSetExpense()).then(() => {
       renderApp();
@@ -47,7 +45,6 @@ firebase.auth().onAuthStateChanged((user) => {
       }
     });
   } else {
-    console.log("Logged Out");
     renderApp();
     history.push("/");
     store.dispatch(logout());
